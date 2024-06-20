@@ -30,13 +30,14 @@
 /*********************************************************************************************************************/
 #include "IfxAsclin_Asc.h"
 #include "IfxCpu_Irq.h"
+#include "IfxAsclin_Lin.h"
 
 /*********************************************************************************************************************/
 /*------------------------------------------------------Macros-------------------------------------------------------*/
 /*********************************************************************************************************************/
-#define UART_BAUDRATE           115200                                  /* UART baud rate in bit/s                  */
+#define UART_BAUDRATE           9600                                  /* UART baud rate in bit/s                  */
 
-#define UART_PIN_RX             IfxAsclin1_RXB_P15_5_IN                 /* UART receive port pin                    */
+#define UART_PIN_RX             IfxAsclin1_RXE_P11_10_IN                 /* UART receive port pin                    */
 #define UART_PIN_TX             IfxAsclin1_TX_P15_5_OUT                 /* UART transmit port pin                   */
 
 /* Definition of the interrupt priorities */
@@ -58,7 +59,7 @@ static uint8 g_ascTxBuffer[UART_TX_BUFFER_SIZE + sizeof(Ifx_Fifo) + 8];
 static uint8 g_ascRxBuffer[UART_RX_BUFFER_SIZE + sizeof(Ifx_Fifo) + 8];
 
 /* Definition of txData and rxData */
-uint8 g_txData[] = "Hello World!";
+uint8 g_txData[] = "AT";
 uint8 g_rxData[SIZE] = {''};
 
 /* Size of the message */

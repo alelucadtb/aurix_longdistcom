@@ -32,5 +32,6 @@
 /*********************************************************************************************************************/
 void init_ASCLIN_UART(void);                    /* Initialization function                                          */
 void send_receive_ASCLIN_UART_message(void);    /* Send and receive function                                        */
+void read_rx_UART(void);
 
 #endif /* ASCLIN_UART_H_ */
