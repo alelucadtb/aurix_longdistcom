@@ -46,7 +46,7 @@
 
 #define UART_RX_BUFFER_SIZE     64                                      /* Definition of the receive buffer size    */
 #define UART_TX_BUFFER_SIZE     64                                      /* Definition of the transmit buffer size   */
-#define SIZE                    2                                      /* Size of the string                       */
+#define SIZE                    3                                      /* Size of the string                       */
 
 /*********************************************************************************************************************/
 /*-------------------------------------------------Global variables--------------------------------------------------*/
@@ -59,7 +59,7 @@ static uint8 g_ascTxBuffer[UART_TX_BUFFER_SIZE + sizeof(Ifx_Fifo) + 8];
 static uint8 g_ascRxBuffer[UART_RX_BUFFER_SIZE + sizeof(Ifx_Fifo) + 8];
 
 /* Definition of txData and rxData */
-uint8 g_txData[SIZE] = "AT";
+uint8 g_txData[] = "AT";
 uint8 g_rxData[SIZE] = {''};
 
 /* Size of the message */
