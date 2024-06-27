@@ -41,7 +41,9 @@
 #include "IfxCpu.h"
 #include "IfxScuWdt.h"
 #include "ASCLIN_UART.h"
+#include "Bsp.h"
 
+#define WAIT_TIME   500
 IFX_ALIGN(4) IfxCpu_syncEvent g_cpuSyncEvent = 0;
 
 void core0_main(void)
@@ -57,6 +59,7 @@ void core0_main(void)
     /* Wait for CPU sync event */
     IfxCpu_emitEvent(&g_cpuSyncEvent);
     IfxCpu_waitEvent(&g_cpuSyncEvent, 1);
+    waitTime(IfxStm_getTicksFromMilliseconds(BSP_DEFAULT_TIMER, WAIT_TIME));
     
     init_ASCLIN_UART();                 /* Initialize the module                  */
     IfxCpu_enableInterrupts();          /* Enable interrupts after initialization */
