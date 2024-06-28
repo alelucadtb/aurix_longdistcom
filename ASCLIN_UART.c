@@ -35,7 +35,7 @@
 /*********************************************************************************************************************/
 /*------------------------------------------------------Macros-------------------------------------------------------*/
 /*********************************************************************************************************************/
-#define UART_BAUDRATE           9600                                  /* UART baud rate in bit/s                  */
+#define UART_BAUDRATE           9600                                /* UART baud rate in bit/s                  */
 
 #define UART_PIN_RX             IfxAsclin1_RXF_P33_13_IN                /* UART receive port pin                    */
 #define UART_PIN_TX             IfxAsclin1_TX_P33_12_OUT                 /* UART transmit port pin                   */
@@ -59,7 +59,7 @@ static uint8 g_ascTxBuffer[UART_TX_BUFFER_SIZE + sizeof(Ifx_Fifo) + 8];
 static uint8 g_ascRxBuffer[UART_RX_BUFFER_SIZE + sizeof(Ifx_Fifo) + 8];
 
 /* Definition of txData and rxData */
-uint8 g_txData[] = "AT\n";
+uint8 g_txData[] = "AT\r\n";
 uint8 g_rxData[SIZE] = {''};
 
 /* Size of the message */
