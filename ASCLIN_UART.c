@@ -59,12 +59,12 @@ static uint8 g_ascTxBuffer[UART_TX_BUFFER_SIZE + sizeof(Ifx_Fifo) + 8];
 static uint8 g_ascRxBuffer[UART_RX_BUFFER_SIZE + sizeof(Ifx_Fifo) + 8];
 
 /* Definition of txData and rxData */
-uint8 g_txData[] = "AT\r\n";
+uint8 g_txData[] = "Hello\r\n";
 uint8 g_rxData[SIZE] = {''};
 
 /* Size of the message */
 Ifx_SizeT g_count = sizeof(g_txData);
-Ifx_SizeT g_rx = 3;
+Ifx_SizeT g_rx = 6;
 /*********************************************************************************************************************/
 /*---------------------------------------------Function Implementations----------------------------------------------*/
 /*********************************************************************************************************************/
@@ -120,5 +120,5 @@ void init_ASCLIN_UART(void)
 void send_receive_ASCLIN_UART_message(void)
 {
     IfxAsclin_Asc_write(&g_ascHandle, g_txData, &g_count, TIME_INFINITE);   /* Transmit data via TX */
-    IfxAsclin_Asc_read(&g_ascHandle, g_rxData, &g_rx, TIME_INFINITE);    /* Receive data via RX  */
+    //IfxAsclin_Asc_read(&g_ascHandle, g_rxData, &g_rx, TIME_INFINITE);    /* Receive data via RX  */
 }
